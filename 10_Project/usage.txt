@@ -1,0 +1,18 @@
+
+python train.py dataset --save_dir model --arch vgg13 --lrn 0.001 --hidden_units 1024 --epochs 20 --GPU GPU
+
+python oxford-102-train.py dataset --save_dir model --arch vgg13 --lrn 0.001 --hidden_units 2048 --epochs 20 --Device GPU
+
+python oxford-102-predict.py dataset/valid/1/image_06739.jpg model/checkpoint.pth --top_k 3 --category_names labels.json --GPU GPU
+
+python oxford-102-predict.py test_image/rose.jpg model/checkpoint.pth --top_k 3 --category_names labels.json --GPU GPU
+
+python oxford-102-predict.py test_image/papatya.jpg model/checkpoint.pth --top_k 5 --category_names labels.json --GPU GPU
+
+python oxford-102-predict.py test_image/rose.jpg model/checkpoint_1.pth --top_k 5 --category_names labels.json --GPU GPU
+
+python oxford-102-predict.py test_image/rose.jpg model/checkpoint_vgg13_lr0.001_hidden1024_epochs20.pth --top_k 5 --category_names labels.json --GPU GPU
+
+python oxford-102-predict.py test_image/papatya.jpg model/checkpoint_vgg13_lr0.001_hidden1024_epochs20.pth --top_k 5 --category_names labels.json --GPU GPU
+
+python oxford-102-predict.py test_image/english_marigold.jpg model/checkpoint_vgg13_lr0.001_hidden1024_epochs20.pth --top_k 5 --category_names labels.json --GPU GPU
